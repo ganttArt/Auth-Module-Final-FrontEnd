@@ -2,6 +2,8 @@
 
 console.log('html hooked up');
 
+const tempusers = ['chris', 'simone', 'eli', 'yuliya'];
+
 function signupSubmitHandler(event) {
   event.preventDefault();
   console.log(event.target);
@@ -18,7 +20,19 @@ function signinSubmitHandler(event) {
 
 function usersSubmitHandler(event) {
   event.preventDefault();
-  console.log(event.target);
+  const validated = true;
+  if (!validated) {
+    alert('user is not validated')
+  } else {
+    const users = document.getElementById('users');
+    users.innerHTML = '';
+    tempusers.forEach(user => {
+      let userElem = document.createElement('li');
+      userElem.innerText = user;
+      users.appendChild(userElem);
+    })
+    console.log(users);
+  }
 }
 
 const signupForm = document.getElementById('signup-form');
