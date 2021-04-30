@@ -6,3 +6,49 @@ footer {
   position: fixed;
   bottom: 0;
 }
+
+fieldset {
+  width: fit-content;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+section, #signin-signup {
+  display: flex;
+  justify-content: center;
+}
+
+#notes-section {
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+}
+
+form {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+}
+
+li, p {
+  margin: 10px;
+}
+
+button {
+  height: fit-content;
+  align-self: center;
+}
+
+textarea {
+  margin: 10px;
+}

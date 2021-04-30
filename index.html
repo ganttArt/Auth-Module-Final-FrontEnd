@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,69 @@
   <link rel="stylesheet" href="css/index.css">
   <title>Auth Module Final</title>
 </head>
+
 <body>
   <header>
     <h1>Auth Module Final</h1>
   </header>
   <main>
+    <section id='signin-signup'>
+      <form id='signup-form'>
+        <fieldset>
+          <legend>Sign Up</legend>
+          <label for="username">
+            <input type="text" id='username' name='username' placeholder="username">
+          </label>
+
+          <label for="password">
+            <input type="text" id='password' name='password' placeholder="password">
+          </label>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <form id='signin-form'>
+        <fieldset>
+          <legend>Sign In</legend>
+          <label for="username">
+            <input type="text" id='username' name='username' placeholder="username">
+          </label>
+
+          <label for="password">
+            <input type="text" id='password' name='password' placeholder="password">
+          </label>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id='notes-section'>
+      <form id='notes'>
+        <ul>
+          <li>
+            <button type="submit">Delete</button>
+            <textarea name="newNote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus purus nisi, et vehicula ex sodales id. Donec in diam purus. Mauris imperdiet, justo in finibus pulvinar, est lorem lobortis turpis, eu varius libero mauris vitae lectus. Praesent a ligula mattis, lacinia turpis eget, pharetra turpis. Fusce at justo placerat dolor pulvinar ullamcorper eget ut massa. Aenean eu blandit tortor, vitae eleifend felis. Sed purus lacus, ornare ac urna eu, tincidunt maximus nibh. Phasellus malesuada in dui et sollicitudin. Sed orci urna, congue viverra arcu ac, pulvinar aliquet nisl. Nunc vitae sem sed lectus tempor imperdiet.
+            </textarea>
+            <button type="submit">Update</button>
+          </li>
+          <li>
+            <button type="submit">Delete</button>
+            <textarea>Just a short note</textarea>
+            <button type="submit">Update</button>
+          </li>
+          <li>
+            <textarea name="newNote" placeholder="New note"></textarea>
+            <button type="submit">Create new note</button>
+          </li>
+        </ul>
+      </form>
+      <form id='new-note'>
+        
+      </form>
+    </section>
   </main>
   <footer>
     <p>&copy; 2021 Chris Gantt, Simone Odegard, Yuliya Barysevich, Elijah Prom</p>
   </footer>
   <script src="js/index.js"></script>
 </body>
+
 </html>
