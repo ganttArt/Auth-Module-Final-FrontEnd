@@ -16,7 +16,7 @@ function signinSubmitHandler(event) {
   console.log(event.target.password.value);
 }
 
-function notesSubmitHandler(event) {
+function usersSubmitHandler(event) {
   event.preventDefault();
   console.log(event.target);
 }
@@ -27,5 +27,5 @@ signupForm.addEventListener('submit', signupSubmitHandler);
 const signinForm = document.getElementById('signin-form');
 signinForm.addEventListener('submit', signinSubmitHandler);
 
-const notesForm = document.getElementById('notes');
-notesForm.addEventListener('submit', notesSubmitHandler);
+const users = document.getElementById('show-users');
+users.addEventListener('submit', usersSubmitHandler);
