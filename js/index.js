@@ -1,37 +1,65 @@
 'use strict';
-
-console.log('html hooked up');
+/* global axios */
 
 const tempusers = ['chris', 'simone', 'eli', 'yuliya'];
+// const URL = "https://auth-module-final-teamsecy.herokuapp.com";
+const URL = "http://localhost:3000";
 
 function signupSubmitHandler(event) {
   event.preventDefault();
-  console.log(event.target);
-  console.log(event.target.username.value);
-  console.log(event.target.password.value);
+  axios.post(`${URL}/signup`,
+    {
+      username: event.target.username.value,
+      password: event.target.password.value,
+      role: 'admin'
+    })
+    .catch(e => alert("Failure signing up. This username may already be in the database."));
 }
 
 function signinSubmitHandler(event) {
   event.preventDefault();
-  console.log(event.target);
-  console.log(event.target.username.value);
-  console.log(event.target.password.value);
+  axios.post(`${URL}/signin`, {},
+    {
+      auth: {
+        username: event.target.username.value,
+        password: event.target.password.value
+      }
+    })
+    .catch(e => {alert("Failed login.")})
+    .then(response => {
+      console.log(response);
+      document.cookie = `user=${response.data.token}`;
+      alert("You're signed in!")
+    })
+  ;
 }
 
-function usersSubmitHandler(event) {
+async function usersSubmitHandler(event) {
   event.preventDefault();
-  const validated = true;
-  if (!validated) {
+  const cookieValue = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('user='))
+    .split('=')[1];
+
+  if (!cookieValue) {
     alert('user is not validated')
   } else {
-    const users = document.getElementById('users');
-    users.innerHTML = '';
-    tempusers.forEach(user => {
-      let userElem = document.createElement('li');
-      userElem.innerText = user;
-      users.appendChild(userElem);
-    })
-    console.log(users);
+    try {
+      let response = await axios.get(`${URL}/users`,
+        {
+          headers: { Authorization: `Bearer ${cookieValue}` }
+        }
+      );
+      const users = document.getElementById('users');
+      users.innerHTML = '';
+      response.data.forEach(user => {
+      // tempusers.forEach(user => {
+        let userElem = document.createElement('li');
+        userElem.innerText = user;
+        users.appendChild(userElem);
+      })
+    }
+    catch (e) {alert('Error making request to the backend.')}
   }
 }
 
