@@ -14,7 +14,7 @@
 
 ## Overview
 
-A front end app that allows a user to log in and write/manipulate a message if they are authorized
+A front end app that allows a user signup, signin, and view all of the users.
 
 ---
 
