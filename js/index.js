@@ -1,9 +1,8 @@
 'use strict';
 /* global axios */
 
-const tempusers = ['chris', 'simone', 'eli', 'yuliya'];
-// const URL = "https://auth-module-final-teamsecy.herokuapp.com";
-const URL = "http://localhost:3000";
+const URL = "https://auth-module-final-teamsecy.herokuapp.com";
+// const URL = "http://localhost:3000";
 
 function signupSubmitHandler(event) {
   event.preventDefault();
@@ -13,7 +12,8 @@ function signupSubmitHandler(event) {
       password: event.target.password.value,
       role: 'admin'
     })
-    .catch(e => alert("Failure signing up. This username may already be in the database."));
+    .catch(e => alert("Failure signing up. This username may already be in the database."))
+    .then(alert("You've signed up!"));
 }
 
 function signinSubmitHandler(event) {
@@ -53,7 +53,6 @@ async function usersSubmitHandler(event) {
       const users = document.getElementById('users');
       users.innerHTML = '';
       response.data.forEach(user => {
-      // tempusers.forEach(user => {
         let userElem = document.createElement('li');
         userElem.innerText = user;
         users.appendChild(userElem);
