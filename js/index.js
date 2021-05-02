@@ -2,7 +2,7 @@
 
 console.log('html hooked up');
 
-const tempusers = ['chris', 'simone', 'eli', 'yuliya'];
+const tempusers = ['Chris', 'Simone', 'Eli', 'Yuliya'];
 
 function signupSubmitHandler(event) {
   event.preventDefault();
@@ -43,3 +43,12 @@ signinForm.addEventListener('submit', signinSubmitHandler);
 
 const users = document.getElementById('show-users');
 users.addEventListener('submit', usersSubmitHandler);
+
+const card = document.getElementById("card");
+
+function openRegister() {
+    card.style.transform = "rotateY(-180deg)";
+}
+function openLogin() {
+    card.style.transform = "rotateY(0deg)";
+}
