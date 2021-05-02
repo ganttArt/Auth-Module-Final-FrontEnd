@@ -40,6 +40,7 @@ async function usersSubmitHandler(event) {
     .split('; ')
     .find(row => row.startsWith('user='))
     .split('=')[1];
+    // approach from https://developer.mozilla.org/en-US/docs/Web/API/document/cookie
 
   if (!cookieValue) {
     alert('user is not validated')
