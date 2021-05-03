@@ -14,14 +14,13 @@
 
 ## Overview
 
-A front end app that allows a user to log in and write/manipulate a message if they are authorized
+A front end app that allows a user signup, signin, and view all of the users.
 
 ---
 
 ## Getting Started
 
-To get started a user would first click this [link](myspace.com) to bring you to the site. Once there the user can log in. After the user is logged in they can create a message for anyone else to see. Depending on your level of authrization a user can create/read/update/delete
-
+To get started a user would first click this [link](https://ganttart.github.io/Auth-Module-Final-FrontEnd/) to bring you to the site. Once there the user can log in or signup. After the user is logged in they can see all the usernames in the database.
 ## Configuration
 
 -   **README.md** - contains documentation

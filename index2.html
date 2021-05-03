@@ -7,19 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Auth Module Final</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
 
-    <div class="container">
+    <div id='signin-signup' class="container">
         <div class="card">
             <div class="inner-box" id="card">
                 <div class="card-front">
                     <h2> LOGIN </h2>
-                    <form>
-                        <input type="text" class="input-box" placeholder="Username" required>
-                        <input type="password" class="input-box" placeholder="Password" required>
-                        <button type="submit" class="submit-btn" id="signin-form">Submit</button>
+                    <form id='signin-form'>
+                        <input type="text" id="username" name="username" class="input-box" placeholder="Username"
+                            required>
+                        <input type="password" id="password" name="password" class="input-box" placeholder="Password"
+                            required>
+                        <button type="submit" class="submit-btn">Submit</button>
                         <input type="checkbox"><span>Remember Me</span>
                     </form>
                     <button type="button" class="btn" onclick="openRegister()">I'm New Here</button>
@@ -27,10 +30,12 @@
                 </div>
                 <div class="card-back">
                     <h2> REGISTER </h2>
-                    <form>
-                        <input type="text" class="input-box" placeholder="Username" required>
-                        <input type="passworrd" class="input-box" placeholder="Password" required>
-                        <button type="submit" class="submit-btn" id="signup-form">Submit</button>
+                    <form id='signup-form'>
+                        <input type="text" id="username" name="username" class="input-box" placeholder="Username"
+                            required>
+                        <input type="password" id="password" name="password" class="input-box" placeholder="Password"
+                            required>
+                        <button type="submit" class="submit-btn">Submit</button>
                         <input type="checkbox"> <span>Remember Me</span>
                     </form>
                     <button type="button" class="btn" id="new" onclick="openLogin()">I have an account</button>
@@ -39,14 +44,14 @@
                 </div>
             </div>
         </div>
+
         <form id='show-users'>
             <button type="submit">Show all users</button>
             <ul id='users'>
 
-                <li>User info 1</li>
-                <li>User info 2</li>
             </ul>
         </form>
+
     </div>
     </main>
 
